@@ -1,0 +1,30 @@
+<section class="container mt-2">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="card mb-3 shadow">
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <h1>Ingreso de Documentales</h1>
+          </div>
+          <div class="container-flex">
+            <%= form_with(model: @documentary_film, url: documentary_films_create_path) do |form| %>
+              <%= form.label :Nombre, class: "mt-2 titulos" %>
+              <%= form.text_field :name, class: 'form-control mt-2' %>
+              <%= form.label :Sinopsis, class: "mt-2 titulos" %>
+              <%= form.text_area :synopsis, class: 'form-control mt-2' %>
+              <%= form.label :Director, class: "mt-2 titulos" %>
+              <%= form.text_field :director, class: 'form-control mt-2' %>
+            <div class="row text-center">
+              <div class="col-6">
+              <%= link_to 'Listado de Docus', documentary_films_index_path, class: 'btn btn-warning btn-lg mt-3' %>
+              </div>
+              <div class="col-6">
+                <%= form.submit 'Guardar Documental', class: 'btn btn-dark btn-lg mt-3' %>
+              </div>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="container mt-2">
+  <div class="row justify-content-center">
+    <div class=" col-12 card mb-2 shadow prueba">
+      <% if flash[:notice] %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-lg-12">
+      <div class="card mb-2 shadow">
+        <div class="card-body row">
+          <div class="col-8 text-left mb-2">
+            <h1>Listado de Documentales:</h1>
+          </div>
+          <div class="col-4 text-center">
+            <%= link_to 'Ingresar Nuevo Docu',  documentary_films_new_path, class: 'btn btn-warning btn-lg font-weight-bold' %>
+          </div>
+          <table class="table table-bordered mt-2">
+            <thead class="thead-light text-center">
+              <tr>
+                <th>Nombre</th>
+                <th>Sinopsis</th>
+                <th>Director</th>
+              </tr>
+            </thead>
+            <tbody class="listado-peliculas">
+              <% @documentary_films.each do |documentary_film| %>
+                <tr>
+                  <td><%= documentary_film.name %></td>
+                  <td><%= documentary_film.synopsis %></td>
+                  <td><%= documentary_film.director %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
